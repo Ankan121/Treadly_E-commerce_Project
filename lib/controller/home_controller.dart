@@ -471,7 +471,8 @@ class HomeController extends GetxController{
   //======================= This respose from api
   List<NewProductModel> productmodelresponse = [];
 
-  void setNewProductModel(){ //save response from api
+  //save response from api
+  void setNewProductModel(){
     productmodelresponse = newProductModelFromMap(new_product_items);
     update();
   }

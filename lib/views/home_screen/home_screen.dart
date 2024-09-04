@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:me/global_widget/new_product.dart';
 import '../../controller/home_controller.dart';
 import '../../global_widget/carousel_slider.dart';
 import '../../global_widget/product_details_all.dart';
+import '../../model/new_product_model.dart';
 import 'Categories/categories.dart';
 
 class Home_Screen extends StatefulWidget {
@@ -14,6 +16,15 @@ class Home_Screen extends StatefulWidget {
 }
 
 class _Home_ScreenState extends State<Home_Screen> {
+
+  @override
+  void initState(){
+    Get.find<HomeController>().setNewProductModel();
+    super.initState();
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -103,19 +114,23 @@ class _Home_ScreenState extends State<Home_Screen> {
                       width: double.infinity.w,
                       child: ListView.builder(
                         shrinkWrap: true,
-                        itemCount: homecon.new_product_items.length,
+                        itemCount: homecon.productmodelresponse.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
-                          print(homecon.productmodelresponse);
+                          print(homecon.productmodelresponse[index]);
+
+                          NewProductModel? model = homecon.productmodelresponse[index];
+
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: InkWell(
                               onTap: (){
-                               Get.to(ProductScreen(title: homecon.new_product_items[index]['title'],
-                                 img: homecon.new_product_items[index]['img'],
-                                 priceItm:  homecon.new_product_items[index]['price'],
+                               Get.to(ProductScreen(
+                                 title: "${model.title}",
+                                 img: "${model.img}",
+                                 priceItm:  "${model.price}",
                                  yesorno: true,
-                                 idname: homecon.new_product_items[index]['id'],
+                                 idname: "${model.id}",
                                 ));
                               },
                               child: Column(
@@ -133,7 +148,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                         topRight: Radius.circular(10),
                                       ),
                                       image: DecorationImage(
-                                          image: AssetImage(homecon.new_product_items[index]['img']),
+                                          image: AssetImage("${model.img}"),
                                           fit:  BoxFit.fill,
                                       ),
                                     ),
@@ -180,6 +195,7 @@ class _Home_ScreenState extends State<Home_Screen> {
 */
                               ],
                                 ),
+
                                 Container(
                                   height: 100.h,
                                   width: 160.w,
@@ -203,7 +219,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text('${homecon.new_product_items[index]['title']}', style: TextStyle(fontSize: 20),),
+                                        Text('${model.title}', style: TextStyle(fontSize: 20),),
                                         Spacer(),
                                         Row(
                                           children: [
@@ -211,15 +227,16 @@ class _Home_ScreenState extends State<Home_Screen> {
                                                 backgroundColor: Colors.teal,
                                                 child: Text('T', style: TextStyle(fontSize: 30),)),
                                             SizedBox(width: 10,),
-                                            Text('${homecon.new_product_items[index]['id']}',style: TextStyle(fontSize: 20),),
+                                            Text('${model.id}',style: TextStyle(fontSize: 20),),
                                             Spacer(),
-                                            Text('${homecon.new_product_items[index]['price']}',style: TextStyle(fontSize: 20,color: Colors.teal),),
+                                            Text('${model.price}',style: TextStyle(fontSize: 20,color: Colors.teal),),
                                           ],
                                         ),
                                       ],
                                     ),
                                   ),
                                 ),
+
                               ],
                                 ),
                             ),
