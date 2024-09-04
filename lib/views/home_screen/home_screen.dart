@@ -106,6 +106,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                         itemCount: homecon.new_product_items.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
+                          print(homecon.productmodelresponse);
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: InkWell(

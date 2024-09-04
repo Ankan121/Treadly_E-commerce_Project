@@ -7,6 +7,7 @@ class HomeController extends GetxController{
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:me/model/new_product_model.dart';
 
 class HomeController extends GetxController{
   //=============Home Page=============
@@ -467,7 +468,15 @@ class HomeController extends GetxController{
     },
   ];
 
+  //======================= This respose from api
+  List<NewProductModel> productmodelresponse = [];
 
+  void setNewProductModel(){ //save response from api
+    productmodelresponse = newProductModelFromMap(new_product_items);
+    update();
+  }
+
+  // ====================== Favourite page =================
   List favItems = [];
 
   void addItems(dynamic value){
