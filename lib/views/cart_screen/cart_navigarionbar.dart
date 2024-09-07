@@ -19,6 +19,8 @@ class _Cart_Navigation_BarState extends State<Cart_Navigation_Bar> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(builder: ( homcon) {
+
+      //int sum = homcon.mycart.fold(0, (previousValue, element) => previousValue + element.price);
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -176,88 +178,6 @@ class _Cart_Navigation_BarState extends State<Cart_Navigation_Bar> {
                 ),
                 Column(
                   children: [
-//                   Card(
-//                     child: Container(
-//                       height: 210,
-//                       width: double.infinity,
-//                       color: Colors.white,
-//                       child: Stack(
-//                         children: [
-//                           Positioned(
-//                             top: 10,
-//                             left: 10,
-//                             child: Container(
-//                               height: 150,
-//                               width: 150,
-//                               decoration: BoxDecoration(
-//                                 color: Colors.blueAccent,
-//                                 borderRadius: BorderRadius.circular(15),
-//                                 image: DecorationImage(
-//                                   image: AssetImage('assets/product/coca cola 2.jpg'),
-//                                   fit: BoxFit.cover,
-//                                 ),
-//                               ),
-//                             ),
-//                           ),
-//                           Positioned(
-//                             top: 20,
-//                             left: 170,
-//                             child: Column(
-//                               children: [
-//                                 Align(
-//                                     alignment: Alignment.topLeft,
-//                                     child: Text(' Coca Cola \n \$25 \n Qty : 1',style: TextStyle(fontSize: 20),textAlign: TextAlign.left,)),
-//                                 SizedBox(height: 10,),
-// /*
-//                               Divider(
-//                                 color: Colors.black,
-//                                 height: 10,
-//                                 thickness: 2,
-//                                 indent: 20,         // Empty space to the leading edge of the divider
-//                                 endIndent: 20,
-//                               ),
-// */
-// /*
-//                               Row(
-//                                 children: [
-//                                   SizedBox(width: 10,),
-//                                   Text('\$25',style: TextStyle(color: Color(0xff33907C),fontSize:20),),
-//                                   SizedBox(width: 10,),
-//                                   Text('\$50',style: TextStyle(color: Colors.black,fontSize: 20,decoration: TextDecoration.lineThrough),),
-//                                   SizedBox(width: 10,),
-//                                   Text('\$50  50% off ',style: TextStyle(color: Colors.black,fontSize: 20,),)
-//                                 ],
-//                               )
-// */
-//                               ],
-//                             ),
-//                           ),
-//                           Column(
-//                             mainAxisAlignment: MainAxisAlignment.end,
-//                             //crossAxisAlignment: CrossAxisAlignment.end,
-//                             children: [
-//                               Center(
-//                                 child: TextButton(onPressed: (){},
-//                                     child: Text("Remove",style: TextStyle(fontSize: 20,color: Colors.red),)),
-//                               )
-//                             ],
-//                           ),
-//
-// /*
-//                         Positioned(
-//                            child: Divider(
-//                             height: 20,
-//                             thickness: 2,
-//                             indent: 20,
-//                             endIndent: 0,
-//                             color: Colors.black,
-//                         ),
-//                          ),
-// */
-//                         ],
-//                       ),
-//                     ),
-//                   ),
                     SizedBox(height: 30,),
                     Container(
                       height: 200,
@@ -319,7 +239,7 @@ class _Cart_Navigation_BarState extends State<Cart_Navigation_Bar> {
                               children: [
                                 Align(
                                     alignment: Alignment.topLeft,
-                                    child: Text(' \$ ${25} ',style: TextStyle(fontSize: 25),textAlign: TextAlign.left,)),
+                                    child: Text(' \$ ${homcon.mycart.length} ',style: TextStyle(fontSize: 25),textAlign: TextAlign.left,)),
                                 SizedBox(height: 10,),
                               ],
                             ),
