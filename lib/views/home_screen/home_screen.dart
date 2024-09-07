@@ -126,11 +126,12 @@ class _Home_ScreenState extends State<Home_Screen> {
                             child: InkWell(
                               onTap: (){
                                Get.to(ProductScreen(
-                                 title: "${model.title}",
-                                 img: "${model.img}",
-                                 priceItm:  "${model.price}",
-                                 yesorno: true,
-                                 idname: "${model.id}",
+                                 // title: "${model.title}",
+                                 // img: "${model.img}",
+                                 // priceItm:  "${model.price}",
+                                 // yesorno: true,
+                                 // idname: "${model.id}",
+                                 model: model,
                                 ));
                               },
                               child: Column(
@@ -275,8 +276,9 @@ class _Home_ScreenState extends State<Home_Screen> {
                             padding: const EdgeInsets.all(8.0),
                             child: InkWell(
                               onTap: (){
-                                Get.to(ProductScreen(title: homecon.popular_product_item[index]['title'], img: homecon.popular_product_item[index]['img'], priceItm:  homecon.popular_product_item[index]['price'],yesorno: true,
-                                  idname: homecon.popular_product_item[index]['id'],
+                                Get.to(ProductScreen(
+                                  // title: homecon.popular_product_item[index]['title'], img: homecon.popular_product_item[index]['img'], priceItm:  homecon.popular_product_item[index]['price'],yesorno: true,
+                                  // idname: homecon.popular_product_item[index]['id'],
                                 ));
                               },
                               child: Column(

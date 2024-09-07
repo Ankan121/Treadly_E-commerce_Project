@@ -44,8 +44,7 @@ class _RadioExampleState extends State<RadioExample> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(onPressed: () {
-          Get.to(Navigation_Var()
-          );
+          Get.back();
         }, icon: Icon(Icons.arrow_back,color: Colors.white,),),
         backgroundColor: Colors.teal,
         title: Text('Payment Option',style: TextStyle(color: Colors.white),),

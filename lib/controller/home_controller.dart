@@ -302,26 +302,26 @@ class HomeController extends GetxController{
     {
       'img': 'assets/product coca cola.png',
       'title': 'Coca Cola',
-      'price': '\$25',
+      'price': '25',
       'id' : 'Tradly'
     },
     {
       'img': 'assets/product musrom.png',
       'title': 'Musrom',
-      'price': '\$15',
+      'price': '15',
       'id' : 'Tradly'
     },
     {
       'img': 'assets/product facewash.jpg',
       'title': 'Facewash',
-      'price': '\$20',
+      'price': '20',
       'id' : 'Tradly'
     },
 
     {
       'img': 'assets/slider 3.jpg',
       'title': 'Shono',
-      'price': '\$18',
+      'price': '18',
       'id' : 'Tradly'
     },
   ];
@@ -333,7 +333,7 @@ class HomeController extends GetxController{
     {
       'img' : 'assets/popular product 1.png',
       'title' : 'Fish',
-      'price' : '\$10',
+      'price' :'10',
       'id' : 'Treadly',
     },
     {
@@ -520,4 +520,30 @@ class HomeController extends GetxController{
   }
 */
 
+//==================== My Card =================
+  List<NewProductModel> mycart = [];
+
+  void addtocart(NewProductModel? value){
+    mycart.add(value!);
+    update();
+    Get.snackbar(
+      'Treadly',
+      'Add to Cart Sucessfully'
+    , icon: Icon(Icons.add_shopping_cart,color: Colors.black,),
+      snackPosition: SnackPosition.TOP,
+      backgroundColor: Colors.blue,
+    );
+  }
+
+  void removetocart(index){
+    mycart.removeAt(index);
+    update();
+    Get.snackbar(
+    "Treadly",
+        "Remove to Cart Sucessflully",
+        icon: Icon(Icons.remove_shopping_cart_outlined,color: Colors.black,),
+        snackPosition: SnackPosition.TOP,
+      backgroundColor: Colors.red,
+    );
+  }
 }
