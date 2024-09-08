@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-Album albumFromMap(String str) => Album.fromMap(json.decode(str));
+Album albumFromMap(dynamic str) => Album.fromMap(json.decode(str as dynamic));
 
 String albumToMap(Album data) => json.encode(data.toMap());
 
