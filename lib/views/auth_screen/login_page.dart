@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:me/controller/auth_controller.dart';
 import 'package:me/views/auth_screen/signup_page.dart';
 import 'package:me/views/home_screen/navigation_var.dart';
+import 'package:http/http.dart' as http;
 
 class ApplyScreen extends StatefulWidget {
   const ApplyScreen({super.key});
@@ -49,6 +51,16 @@ class _MyFormState extends State<MyForm> {
       print("Institute Location: $_password");
     }
 */
+  }
+  @override
+  void initState(){
+    Future.delayed(Duration.zero, ()async{
+     await Get.find<AuthController>().fetchAlbum();
+    }
+    );
+    super.initState();
+
+
   }
 
   @override

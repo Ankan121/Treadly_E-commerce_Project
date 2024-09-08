@@ -52,7 +52,7 @@ class _Profile_pageState extends State<Profile_page> {
                     children: [
                       Text('Tradly Team',style: TextStyle(fontSize: 20,color: Colors.white),),
                       Text('01571258430',style: TextStyle(fontSize: 15,color: Colors.white),),
-                      Text('ankanbiswas942@gmail.com',style: TextStyle(fontSize: 15,color: Colors.white),),
+                      Text('ankan.dev.prog@gmail.com',style: TextStyle(fontSize: 15,color: Colors.white),),
 
                     ],
                   ),
@@ -73,13 +73,13 @@ class _Profile_pageState extends State<Profile_page> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                    Text('Edit Profile',style: TextStyle(fontSize: 20),),
+                    Text('Ankan Chandra Biswas',style: TextStyle(fontSize: 20),),
                     SizedBox(height: 20,),
-                    Text('Language & Currency',style: TextStyle(fontSize: 20),),
+                    Text('ankan.dev.prog@gmail.com',style: TextStyle(fontSize: 20),),
                       SizedBox(height: 20,),
-                      Text('Refer a Friend',style: TextStyle(fontSize: 20),),
+                      Text('01571258430',style: TextStyle(fontSize: 20),),
                       SizedBox(height: 20,),
-                      Text('Terms & Conditions',style: TextStyle(fontSize: 20),),
+                      Text('Raipura, Narsingdi',style: TextStyle(fontSize: 20),),
                       SizedBox(height: 20,),
                       TextButton(onPressed: (){
                         Get.to(ApplyScreen());

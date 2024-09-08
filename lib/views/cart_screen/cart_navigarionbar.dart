@@ -16,6 +16,7 @@ class Cart_Navigation_Bar extends StatefulWidget {
 }
 
 class _Cart_Navigation_BarState extends State<Cart_Navigation_Bar> {
+  NewProductModel? model;
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(builder: ( homcon) {
@@ -206,7 +207,7 @@ class _Cart_Navigation_BarState extends State<Cart_Navigation_Bar> {
                               children: [
                                 Align(
                                     alignment: Alignment.topLeft,
-                                    child: Text(' \$25 \n Info',style: TextStyle(fontSize: 20),textAlign: TextAlign.left,)),
+                                    child: Text(' \$${25} \n Info',style: TextStyle(fontSize: 20),textAlign: TextAlign.left,)),
                                 SizedBox(height: 10,),
                               ],
                             ),
@@ -239,7 +240,7 @@ class _Cart_Navigation_BarState extends State<Cart_Navigation_Bar> {
                               children: [
                                 Align(
                                     alignment: Alignment.topLeft,
-                                    child: Text(' \$ ${homcon.mycart.length} ',style: TextStyle(fontSize: 25),textAlign: TextAlign.left,)),
+                                    child: Text(' \$ ${homcon.mycart.length * 25 } ',style: TextStyle(fontSize: 25),textAlign: TextAlign.left,)),
                                 SizedBox(height: 10,),
                               ],
                             ),
