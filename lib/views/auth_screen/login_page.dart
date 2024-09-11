@@ -56,16 +56,23 @@ class _MyFormState extends State<MyForm> {
   void initState(){
     Future.delayed(Duration.zero, ()async{
      await Get.find<AuthController>().fetchAlbum();
+
+
+    Future.delayed(Duration.zero, ()async{
+      await Get.find<AuthController>().fetchAlbumModel();
+    }
+    );
+
     }
     );
     super.initState();
-
-
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+
+      Scaffold(
       backgroundColor: Color(0xff33907C),
 
       body: SafeArea(

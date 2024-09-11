@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:me/api_call_demo.dart';
 import '../auth_screen/login_page.dart';
 import 'onboarding_model.dart';
 
@@ -118,7 +119,7 @@ class _OnBoarding_Page_1State extends State<OnBoarding_Page_1> {
                 child: TextButton(
                   onPressed: () {
                     if(currentIndex == contents.length -1){
-                      Get.to(ApplyScreen());
+                      Get.to(const Api_Call_Demo());
                     }
                     _pageController.nextPage(duration: Duration(microseconds: 100), curve: Curves.bounceIn);
                   },
